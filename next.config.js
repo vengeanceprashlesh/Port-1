@@ -5,9 +5,6 @@ const nextConfig = {
   },
   experimental: {
     optimizeCss: true,
-    turbopack: {
-      root: ['C:\\Portfolio'],
-    },
   },
 }
 
