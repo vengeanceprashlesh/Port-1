@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,14 +9,14 @@
    ============================================ */
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 53%;
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 100%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 40%;
-    --border: 0 0% 10%;
-    --radius: 2rem;
+    --background: 45 20% 98%;
+    --foreground: 0 0% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --border: 0 0% 90%;
+    --radius: 0.5rem;
   }
 }
 
@@ -33,75 +33,97 @@
   }
 
   body {
-    @apply bg-black text-[#888888] antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 /* ============================================
-   CUSTOM ANIMATIONS
+   SMOOTH REVEAL ANIMATION
    ============================================ */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+.reveal-text {
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
 
+@keyframes reveal {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-  opacity: 0;
-}
-
 .delay-100 {
-  animation-delay: 100ms;
+  animation-delay: 0.1s;
 }
 
 .delay-200 {
-  animation-delay: 200ms;
+  animation-delay: 0.2s;
 }
 
 .delay-300 {
-  animation-delay: 300ms;
-}
-
-.delay-400 {
-  animation-delay: 400ms;
-}
-
-.delay-500 {
-  animation-delay: 500ms;
+  animation-delay: 0.3s;
 }
 
 /* ============================================
-   SCROLLBAR
+   MINIMAL SCROLLBAR
    ============================================ */
 ::-webkit-scrollbar {
   width: 0px;
+  background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* ============================================
-   CARD HOVER EFFECTS
+   STUDIO CARD SHADOW
    ============================================ */
-.card-hover {
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.studio-card {
+  box-shadow: 0 -50px 100px -20px rgba(0, 0, 0, 0.2);
 }
 
-.card-hover:hover {
-  transform: scale(1.02);
-  background-color: #1a1a1a;
+/* ============================================
+   LENIS RECOMMENDED STYLES
+   ============================================ */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ============================================
+   GIANT TEXT UTILITY
+   ============================================ */
+.giant-text {
+  font-size: clamp(3rem, 13.5vw, 16rem);
+  line-height: 0.8;
 }
 
 /* ============================================
    SELECTION
    ============================================ */
 ::selection {
-  @apply bg-white/20 text-white;
+  @apply bg-neutral-900 text-white;
 }
 
 /* ============================================

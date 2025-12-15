@@ -1,25 +1,26 @@
-import { BentoNavigation } from '@/components/bento-navigation'
-import { BentoHero } from '@/components/bento-hero'
-import { BentoGrid } from '@/components/bento-grid'
-import { BentoFooter } from '@/components/bento-footer'
+import { SplitHero } from '@/components/split-hero'
+import { ProfileSection } from '@/components/profile-section'
+import { PortfolioCarousel } from '@/components/portfolio-carousel'
+import { ServicesSection } from '@/components/services-section'
+import { ContactFooter } from '@/components/contact-footer'
 
 export default function Home() {
   return (
-    <>
-      {/* Navigation */}
-      <BentoNavigation />
+    <main className="selection:bg-neutral-900 selection:text-white overflow-x-hidden text-neutral-900 bg-[#fcfbf9]">
+      {/* Split Hero Section */}
+      <SplitHero />
 
-      {/* Main Content */}
-      <main className="md:px-12 max-w-[1400px] mr-auto ml-auto pt-40 pr-6 pl-6 pb-20">
-        {/* Hero Header */}
-        <BentoHero />
+      {/* Me / About Section */}
+      <ProfileSection />
 
-        {/* Bento Grid Layout */}
-        <BentoGrid />
+      {/* Portfolio Section (Horizontal Scroll) */}
+      <PortfolioCarousel />
 
-        {/* Footer */}
-        <BentoFooter />
-      </main>
-    </>
+      {/* Services Section */}
+      <ServicesSection />
+
+      {/* Footer / Get in Touch */}
+      <ContactFooter />
+    </main>
   )
 }

@@ -1,18 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['300', '400', '500', '600']
-})
-
 export const metadata: Metadata = {
-  title: 'Prashlesh Pratap Singh | Full-Stack & Blockchain Developer',
-  description: 'Portfolio of a CSE student at Woxsen University specializing in Full-Stack Development, Blockchain, and modern web applications.',
-  keywords: ['Full-Stack', 'Blockchain', 'Next.js', 'React', 'Solidity', 'Portfolio'],
-  authors: [{ name: 'Prashlesh Pratap Singh' }],
+  title: 'Valeriia Shchebetovska — Digital Designer',
+  description: 'I build high-performing low-code websites that launch fast, look premium, and convert with impact.',
+  keywords: ['Web Design', 'Development', 'UI/UX', 'Webflow', 'Framer', 'React'],
+  authors: [{ name: 'Valeriia Shchebetovska' }],
 }
 
 export default function RootLayout({
@@ -22,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased min-h-screen`}>
+      <body className="antialiased min-h-screen overflow-x-hidden">
         {children}
       </body>
     </html>
