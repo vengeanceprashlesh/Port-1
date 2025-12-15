@@ -5,7 +5,6 @@ import { Send, ArrowUpRight, ArrowLeft } from 'lucide-react'
 import { socials } from '@/lib/data'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { BentoNavigation } from '@/components/bento-navigation'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -42,9 +41,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <BentoNavigation />
-
-      <main className="md:px-12 max-w-[1400px] mr-auto ml-auto pt-40 pr-6 pl-6 pb-20">
+      <main className="md:px-12 max-w-[1400px] mr-auto ml-auto pt-40 pr-6 pl-6 pb-20 bg-neutral-950 min-h-screen">
         {/* Back Link */}
         <Link
           href="/"
