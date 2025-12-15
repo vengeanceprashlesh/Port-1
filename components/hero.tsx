@@ -1,147 +1,99 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 import { socials } from '@/lib/data'
-import { useEffect, useState } from 'react'
-import LightPillar from '@/components/ui/light-pillar'
-
-const titles = [
-  'Full-Stack Developer building modern web apps',
-  'Blockchain Developer exploring Web3',
-  'CS Student at Woxsen University',
-  'Smart India Hackathon Participant',
-]
 
 export function Hero() {
-  const [currentTitle, setCurrentTitle] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTitle((prev) => (prev + 1) % titles.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative min-h-screen">
-      <div className="absolute inset-0 w-full h-full -z-10">
-        <LightPillar
-          topColor="#5227FF"
-          bottomColor="#916990"
-          intensity={1.3}
-          rotationSpeed={0.3}
-          glowAmount={0.002}
-          pillarWidth={3}
-          pillarHeight={0.4}
-          noiseIntensity={0.5}
-          pillarRotation={25}
-          mixBlendMode="screen"
-          interactive={false}
-        />
-      </div>
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Hi, I'm{' '}
-            <span className="gradient-text">Prashlesh</span>
-          </h1>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="h-16 mb-8"
-        >
-          <p className="text-xl md:text-2xl text-muted-foreground font-mono">
-            {titles[currentTitle]}
-          </p>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto"
-        >
-          Computer Science student at Woxsen University passionate about Full-Stack Development,
-          Blockchain, and building products that matter. Currently working on AURA & HerbX.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
-          <a
-            href="#projects"
-            className="px-8 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity neon-glow"
-          >
-            View Projects
-          </a>
-          <a
-            href="/resume.pdf"
-            download
-            className="px-8 py-3 glass-card font-semibold rounded-lg hover:bg-accent transition-colors"
-          >
-            Download Resume
-          </a>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex justify-center space-x-6 mb-16"
-        >
-          <a
+    <section className="section-dark min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="container-lg py-6">
+        <div className="flex justify-between items-center">
+          <Link href="/" className="text-small text-white/60 hover:text-white transition-colors">
+            Prashlesh © 2025
+          </Link>
+          <nav className="hidden md:flex gap-8">
+            <Link href="/" className="text-small text-white link-underline">Home</Link>
+            <Link href="/about" className="text-small text-white/60 hover:text-white link-underline">About</Link>
+            <Link href="/projects" className="text-small text-white/60 hover:text-white link-underline">Work</Link>
+            <Link href="/contact" className="text-small text-white/60 hover:text-white link-underline">Contact</Link>
+          </nav>
+          <a 
             href={socials.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-cyan-500 transition-colors"
-            aria-label="GitHub"
+            className="text-small text-white/60 hover:text-white transition-colors"
           >
-            <Github className="h-6 w-6" />
+            GitHub ↗
           </a>
-          <a
-            href={socials.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-cyan-500 transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="h-6 w-6" />
-          </a>
-          <a
-            href={socials.portfolio}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-cyan-500 transition-colors"
-            aria-label="Portfolio"
-          >
-            <ExternalLink className="h-6 w-6" />
-          </a>
-        </motion.div>
+        </div>
+      </header>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-        >
-          <a
-            href="#stats"
-            className="inline-flex items-center text-muted-foreground hover:text-cyan-500 transition-colors"
-          >
-            <ArrowDown className="h-5 w-5 animate-bounce" />
-          </a>
-        </motion.div>
+      {/* Main Content */}
+      <div className="flex-1 flex items-center">
+        <div className="container-lg">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left - Title */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-small text-white/60 mb-6">Full-Stack Developer</p>
+              <h1 className="text-massive text-white mb-8">
+                PRASHLESH
+              </h1>
+              <p className="text-body-xl text-white/70 max-w-md mb-10">
+                Building modern web applications and blockchain solutions. 
+                CS student at Woxsen University.
+              </p>
+              <div className="flex gap-4">
+                <Link href="/projects" className="btn btn-light">
+                  View Work
+                </Link>
+                <Link href="/contact" className="btn btn-outline-light">
+                  Contact
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right - Image Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative aspect-[4/5] bg-white/5 overflow-hidden"
+            >
+              {/* Replace with your image */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-small text-white/30">Your Photo</p>
+              </div>
+              {/*
+              <Image 
+                src="/your-photo.jpg"
+                alt="Prashlesh"
+                fill
+                className="object-cover grayscale"
+              />
+              */}
+            </motion.div>
+          </div>
+        </div>
       </div>
+
+      {/* Bottom */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        className="container-lg py-8"
+      >
+        <div className="flex justify-between items-center text-white/40">
+          <p className="text-small">Based in India</p>
+          <p className="text-small">Scroll to explore</p>
+        </div>
+      </motion.div>
     </section>
   )
 }

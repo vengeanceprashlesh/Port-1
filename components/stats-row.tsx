@@ -1,37 +1,38 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Shield, Briefcase, Code } from 'lucide-react'
 import { stats } from '@/lib/data'
 
-const iconMap = {
-  github: Github,
-  shield: Shield,
-  briefcase: Briefcase,
-  code: Code,
-}
-
-export function StatsRow() {
+export function StatsSection() {
   return (
-    <section id="stats" className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {stats.map((stat, index) => {
-          const Icon = iconMap[stat.icon as keyof typeof iconMap]
-          return (
+    <section className="section-light section-padding">
+      <div className="container-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <p className="text-small text-muted mb-4">Numbers</p>
+          <h2 className="text-display-lg text-black">At a Glance</h2>
+        </motion.div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card p-6 text-center rounded-xl hover:scale-105 transition-transform"
+              className="border-t border-black/10 pt-8"
             >
-              <Icon className="h-8 w-8 mx-auto mb-3 text-cyan-500" />
-              <p className="text-3xl font-bold gradient-text mb-1">{stat.value}</p>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
+              <p className="text-stat text-black">{stat.value}</p>
+              <p className="text-small text-muted mt-4">{stat.label}</p>
             </motion.div>
-          )
-        })}
+          ))}
+        </div>
       </div>
     </section>
   )

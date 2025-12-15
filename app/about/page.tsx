@@ -1,152 +1,153 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Download, Calendar, MapPin, Mail, Code2 } from 'lucide-react'
+import { Download, ArrowUpRight } from 'lucide-react'
 import { timeline, socials } from '@/lib/data'
+import Link from 'next/link'
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto text-center mb-16"
-      >
-        <h1 className="text-5xl font-bold mb-4 gradient-text">About Me</h1>
-        <p className="text-xl text-muted-foreground mb-8">
-          Computer Science student passionate about Full-Stack Development, Blockchain, and creating impactful digital experiences.
-        </p>
-        <a
-          href="/resume.pdf"
-          download
-          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity neon-glow"
-        >
-          <Download className="h-5 w-5 mr-2" />
-          Download Resume
-        </a>
-      </motion.div>
-
-      {/* Info Cards */}
-      <div className="grid md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="glass-card p-6 rounded-xl text-center"
-        >
-          <MapPin className="h-8 w-8 mx-auto mb-3 text-cyan-500" />
-          <h3 className="font-semibold mb-1">Location</h3>
-          <p className="text-sm text-muted-foreground">India • IST Timezone</p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="glass-card p-6 rounded-xl text-center"
-        >
-          <Calendar className="h-8 w-8 mx-auto mb-3 text-cyan-500" />
-          <h3 className="font-semibold mb-1">Availability</h3>
-          <p className="text-sm text-muted-foreground">Open for Internships</p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="glass-card p-6 rounded-xl text-center"
-        >
-          <Mail className="h-8 w-8 mx-auto mb-3 text-cyan-500" />
-          <h3 className="font-semibold mb-1">Contact</h3>
-          <a
-            href={`mailto:${socials.email}`}
-            className="text-sm text-cyan-500 hover:underline"
+    <>
+      {/* HERO - BLACK */}
+      <section className="section-dark section-padding">
+        <div className="container-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            {socials.email}
-          </a>
-        </motion.div>
-      </div>
-
-      {/* About Text */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="glass-card p-8 rounded-xl mb-16 max-w-4xl mx-auto"
-      >
-        <div className="flex items-center mb-6">
-          <Code2 className="h-6 w-6 text-cyan-500 mr-3" />
-          <h2 className="text-2xl font-bold">My Journey</h2>
+            <p className="text-small text-white/60 mb-6">About</p>
+            <h1 className="text-massive text-white mb-8">
+              ABOUT ME
+            </h1>
+            <p className="text-body-xl text-white/70 max-w-2xl mb-10">
+              I'm Prashlesh Pratap Singh, a Computer Science student at Woxsen University
+              passionate about building modern web applications and blockchain solutions.
+            </p>
+            <a href="/resume.pdf" download className="btn btn-light">
+              <Download className="h-4 w-4 mr-2" />
+              Download Resume
+            </a>
+          </motion.div>
         </div>
-        <div className="space-y-4 text-muted-foreground leading-relaxed">
-          <p>
-            I'm Prashlesh Pratap Singh, a Computer Science Engineering student at Woxsen University,
-            Hyderabad. My journey in tech started with web development and has evolved into
-            exploring blockchain technology and building full-stack applications that solve real problems.
-          </p>
-          <p>
-            Currently, I'm working on AURA - a modern e-commerce clothing store with 3D product
-            visualization, and HerbX - a blockchain-based supply chain system using Ethereum smart
-            contracts. I'm passionate about creating seamless user experiences backed by robust technology.
-          </p>
-          <p>
-            I participated in Smart India Hackathon 2025 where I built an AI-powered personalized
-            study application. I'm also certified in Foundations of User Experience (UX Design),
-            which helps me create user-centric products.
-          </p>
-          <p>
-            I'm always eager to learn new technologies and collaborate on exciting projects.
-            Whether it's building modern web applications, exploring Web3, or designing intuitive
-            interfaces - I'm ready to take on new challenges!
-          </p>
-        </div>
-      </motion.div>
+      </section>
 
-      {/* Timeline */}
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-8"
-        >
-          <h2 className="text-3xl font-bold text-center gradient-text mb-12">Timeline</h2>
-        </motion.div>
-
-        <div className="space-y-8">
-          {timeline.map((item, index) => (
+      {/* INFO GRID - WHITE */}
+      <section className="section-light section-padding">
+        <div className="container-lg">
+          <div className="grid md:grid-cols-3 gap-8">
             <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex gap-6"
+              className="p-8 bg-black/5"
             >
-              <div className="flex-shrink-0 w-24 text-right">
-                <span className="text-2xl font-bold text-cyan-500 font-mono">{item.year}</span>
-              </div>
-              <div className="flex-shrink-0 flex flex-col items-center">
-                <div className="w-4 h-4 bg-cyan-500 rounded-full neon-glow" />
-                {index < timeline.length - 1 && (
-                  <div className="w-0.5 h-full bg-cyan-500/30 mt-2" />
-                )}
-              </div>
-              <div className="flex-1 pb-8">
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
+              <p className="text-small text-muted mb-4">Location</p>
+              <p className="text-display-md text-black">India</p>
+              <p className="text-body text-muted mt-2">IST Timezone</p>
             </motion.div>
-          ))}
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="p-8 bg-black/5"
+            >
+              <p className="text-small text-muted mb-4">Status</p>
+              <p className="text-display-md text-black">Available</p>
+              <p className="text-body text-muted mt-2">Open for internships</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="p-8 bg-black/5"
+            >
+              <p className="text-small text-muted mb-4">Education</p>
+              <p className="text-display-md text-black">B.Tech</p>
+              <p className="text-body text-muted mt-2">Computer Science</p>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* STORY - BLACK */}
+      <section className="section-dark section-padding">
+        <div className="container-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-small text-white/60 mb-6">Story</p>
+            <div className="grid md:grid-cols-2 gap-12">
+              <p className="text-body-xl text-white/80">
+                My journey in tech started with curiosity about how websites work.
+                Today, I build full-stack applications and explore blockchain technology
+                to create solutions that matter.
+              </p>
+              <p className="text-body-xl text-white/80">
+                Currently working on AURA - a modern e-commerce platform, and HerbX -
+                a blockchain supply chain system. I participated in Smart India Hackathon
+                and I'm certified in UX Design.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* TIMELINE - WHITE */}
+      <section className="section-light section-padding">
+        <div className="container-lg">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <p className="text-small text-muted mb-4">Journey</p>
+            <h2 className="text-display-lg text-black">Timeline</h2>
+          </motion.div>
+
+          <div className="border-t border-black/10">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="grid md:grid-cols-4 gap-6 py-8 border-b border-black/10"
+              >
+                <p className="text-stat text-black/20">{item.year}</p>
+                <div className="md:col-span-3">
+                  <p className="text-title text-black mb-2">{item.title}</p>
+                  <p className="text-body text-muted">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA - BLACK */}
+      <section className="section-dark section-padding">
+        <div className="container-lg text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-small text-white/60 mb-6">Interested?</p>
+            <Link href="/contact" className="text-display-lg text-white link-underline">
+              Let's Connect <ArrowUpRight className="inline-block h-12 w-12" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </>
   )
 }

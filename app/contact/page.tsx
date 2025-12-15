@@ -1,27 +1,35 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Github, Linkedin, ExternalLink, Send, MapPin, Clock } from 'lucide-react'
+import { Send, ArrowUpRight } from 'lucide-react'
 import { socials } from '@/lib/data'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: '',
   })
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [localTime, setLocalTime] = useState('')
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  useEffect(() => {
+    const updateTime = () => {
+      const time = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      })
+      setLocalTime(time)
+    }
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Simulated form submission
-    setStatus('success')
-    setTimeout(() => {
-      setStatus('idle')
-      setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,206 +37,153 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-4xl mx-auto text-center mb-16"
-      >
-        <h1 className="text-5xl font-bold mb-4 gradient-text">Get in Touch</h1>
-        <p className="text-xl text-muted-foreground">
-          Looking to collaborate, discuss projects, or just chat about tech?
-          Let's connect and build something amazing together!
-        </p>
-      </motion.div>
-
-      <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {/* Contact Info */}
-        <div className="lg:col-span-1 space-y-6">
+    <>
+      {/* HERO - BLACK */}
+      <section className="section-dark section-padding">
+        <div className="container-lg">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="glass-card p-6 rounded-xl"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-xl font-bold mb-6">Contact Information</h2>
+            <p className="text-small text-white/60 mb-6">Contact</p>
+            <h1 className="text-massive text-white">
+              LET'S TALK
+            </h1>
+          </motion.div>
+        </div>
+      </section>
 
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <Mail className="h-5 w-5 text-cyan-500 mr-3 mt-1" />
+      {/* CONTACT INFO - WHITE */}
+      <section className="section-light section-padding">
+        <div className="container-lg">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left - Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              {/* Email */}
+              <div className="mb-12">
+                <p className="text-small text-muted mb-4">Email</p>
+                <a
+                  href={`mailto:${socials.email}`}
+                  className="text-display-md text-black link-underline"
+                >
+                  {socials.email}
+                </a>
+              </div>
+
+              {/* Location & Time */}
+              <div className="grid grid-cols-2 gap-8 mb-12">
                 <div>
-                  <p className="font-semibold mb-1">Email</p>
+                  <p className="text-small text-muted mb-4">Location</p>
+                  <p className="text-title text-black">India</p>
+                </div>
+                <div>
+                  <p className="text-small text-muted mb-4">Local Time</p>
+                  <p className="text-title text-black font-mono">{localTime || '--:--'}</p>
+                </div>
+              </div>
+
+              {/* Socials */}
+              <div>
+                <p className="text-small text-muted mb-6">Socials</p>
+                <div className="flex flex-col gap-4">
                   <a
-                    href={`mailto:${socials.email}`}
-                    className="text-sm text-muted-foreground hover:text-cyan-500 transition-colors"
+                    href={socials.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-title text-black link-underline w-fit"
                   >
-                    {socials.email}
+                    GitHub <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-title text-black link-underline w-fit"
+                  >
+                    LinkedIn <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={socials.leetcode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-title text-black link-underline w-fit"
+                  >
+                    LeetCode <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </div>
               </div>
+            </motion.div>
 
-              <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-cyan-500 mr-3 mt-1" />
+            {/* Right - Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <div>
-                  <p className="font-semibold mb-1">Location</p>
-                  <p className="text-sm text-muted-foreground">India</p>
+                  <label htmlFor="name" className="text-small text-muted block mb-4">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-transparent border-b-2 border-black/20 py-4 text-title text-black focus:border-black focus:outline-none transition-colors placeholder:text-black/30"
+                    placeholder="John Doe"
+                  />
                 </div>
-              </div>
 
-              <div className="flex items-start">
-                <Clock className="h-5 w-5 text-cyan-500 mr-3 mt-1" />
                 <div>
-                  <p className="font-semibold mb-1">Timezone</p>
-                  <p className="text-sm text-muted-foreground">IST (GMT+5:30)</p>
+                  <label htmlFor="email" className="text-small text-muted block mb-4">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full bg-transparent border-b-2 border-black/20 py-4 text-title text-black focus:border-black focus:outline-none transition-colors placeholder:text-black/30"
+                    placeholder="john@example.com"
+                  />
                 </div>
-              </div>
-            </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="glass-card p-6 rounded-xl"
-          >
-            <h2 className="text-xl font-bold mb-6">Social Links</h2>
+                <div>
+                  <label htmlFor="message" className="text-small text-muted block mb-4">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="w-full bg-transparent border-b-2 border-black/20 py-4 text-title text-black focus:border-black focus:outline-none transition-colors resize-none placeholder:text-black/30"
+                    placeholder="Tell me about your project..."
+                  />
+                </div>
 
-            <div className="space-y-3">
-              <a
-                href={socials.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center p-3 rounded-lg hover:bg-accent transition-colors"
-              >
-                <Github className="h-5 w-5 mr-3 text-cyan-500" />
-                <span className="font-medium">GitHub</span>
-              </a>
-
-              <a
-                href={socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center p-3 rounded-lg hover:bg-accent transition-colors"
-              >
-                <Linkedin className="h-5 w-5 mr-3 text-cyan-500" />
-                <span className="font-medium">LinkedIn</span>
-              </a>
-
-              <a
-                href={socials.portfolio}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center p-3 rounded-lg hover:bg-accent transition-colors"
-              >
-                <ExternalLink className="h-5 w-5 mr-3 text-cyan-500" />
-                <span className="font-medium">Portfolio</span>
-              </a>
-
-              <a
-                href={socials.leetcode}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center p-3 rounded-lg hover:bg-accent transition-colors"
-              >
-                <ExternalLink className="h-5 w-5 mr-3 text-cyan-500" />
-                <span className="font-medium">LeetCode</span>
-              </a>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Contact Form */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="lg:col-span-2"
-        >
-          <div className="glass-card p-8 rounded-xl">
-            <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-accent rounded-lg border border-border focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-accent rounded-lg border border-border focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-colors"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-accent rounded-lg border border-border focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-colors"
-                  placeholder="What's this about?"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-accent rounded-lg border border-border focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-colors resize-none"
-                  placeholder="Tell me about your project or opportunity..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-6 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity neon-glow flex items-center justify-center"
-              >
-                <Send className="h-5 w-5 mr-2" />
-                Send Message
-              </button>
-
-              {status === 'success' && (
-                <p className="text-green-500 text-center">Message sent successfully! I'll get back to you soon.</p>
-              )}
-            </form>
+                <button type="submit" className="btn btn-dark w-full">
+                  <Send className="h-4 w-4 mr-2" />
+                  Send Message
+                </button>
+              </form>
+            </motion.div>
           </div>
-        </motion.div>
-      </div>
-    </div>
+        </div>
+      </section>
+    </>
   )
 }

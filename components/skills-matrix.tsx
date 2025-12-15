@@ -3,70 +3,49 @@
 import { motion } from 'framer-motion'
 import { skills } from '@/lib/data'
 
-export function SkillsMatrix() {
+export function SkillsSection() {
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-3xl font-bold mb-8 text-center gradient-text">
-          Technical Skills
-        </h2>
+    <section className="section-light section-padding border-t border-black/10">
+      <div className="container-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <p className="text-small text-muted mb-4">Expertise</p>
+          <h2 className="text-display-lg text-black">Skills & Tools</h2>
+        </motion.div>
 
-        <div className="glass-card rounded-xl overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="px-6 py-4 text-left font-semibold">Domain</th>
-                  <th className="px-6 py-4 text-left font-semibold">Skills</th>
-                  <th className="px-6 py-4 text-left font-semibold">Level</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Object.entries(skills).map(([domain, data], index) => (
-                  <motion.tr
-                    key={domain}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="border-b border-border last:border-0 hover:bg-accent/50 transition-colors"
+        <div className="space-y-12">
+          {Object.entries(skills).map(([domain, data], index) => (
+            <motion.div
+              key={domain}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="grid md:grid-cols-4 gap-6 py-8 border-t border-black/10"
+            >
+              <div>
+                <p className="text-title text-black">{domain}</p>
+                <p className="text-small text-muted mt-2">{data.level}</p>
+              </div>
+              <div className="md:col-span-3 flex flex-wrap gap-3">
+                {data.items.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-5 py-2 bg-black text-white text-small hover:bg-black/80 transition-colors cursor-default"
                   >
-                    <td className="px-6 py-4 font-semibold">{domain}</td>
-                    <td className="px-6 py-4">
-                      <div className="flex flex-wrap gap-2">
-                        {data.items.map((skill) => (
-                          <span
-                            key={skill}
-                            className="text-xs px-2 py-1 bg-cyan-500/10 text-cyan-500 rounded-md font-mono"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span
-                        className={`text-xs px-3 py-1 rounded-full font-semibold ${
-                          data.level === 'Advanced'
-                            ? 'bg-green-500/10 text-green-500'
-                            : 'bg-yellow-500/10 text-yellow-500'
-                        }`}
-                      >
-                        {data.level}
-                      </span>
-                    </td>
-                  </motion.tr>
+                    {skill}
+                  </span>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }
