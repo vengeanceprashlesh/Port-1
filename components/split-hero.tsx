@@ -79,7 +79,7 @@ export function SplitHero({ onNavigate }: SplitHeroProps) {
                         </div>
 
                         <p className="text-base font-normal text-neutral-500 leading-relaxed">
-                            I'm <span className="text-neutral-900 font-medium">Valeriia Shchebetovska</span>.
+                            I'm <span className="text-neutral-900 font-medium">Prashlesh Pratap Singh</span>.
                             I build high-performing low-code websites that launch fast, look premium, and convert with impact.
                         </p>
                     </div>

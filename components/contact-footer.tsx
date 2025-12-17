@@ -4,7 +4,7 @@ export function ContactFooter() {
     return (
         <footer
             id="contact"
-            className="bg-neutral-950 text-[#fcfbf9] rounded-t-[3rem] pt-24 pb-12 overflow-hidden"
+            className="bg-neutral-950 text-[#fcfbf9] rounded-t-[3rem] pt-24 pb-12 overflow-hidden -mt-24 relative z-10"
         >
             <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-16 mb-24">
