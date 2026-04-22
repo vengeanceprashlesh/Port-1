@@ -3,6 +3,10 @@ const nextConfig = {
   images: {
     domains: ['github.com', 'raw.githubusercontent.com'],
   },
+  devIndicators: {
+    appIsrStatus: false,
+    buildActivity: false,
+  },
   experimental: {
     optimizeCss: true,
   },

@@ -1,0 +1,193 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Prashlesh Pratap Singh
+% Role: AI/ML Engineer
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{blue}\titlerule \vspace{-3pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Prashlesh Pratap Singh} \\ \vspace{2pt}
+    \small 
+    \raisebox{-0.1\height}\faPhone\ +91-9918190536 ~ $|$ ~ 
+    \href{mailto:iamprashlesh@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ iamprashlesh@gmail.com} ~ $|$ ~ 
+    \href{https://linkedin.com/in/prashlesh}{\raisebox{-0.2\height}\faLinkedin\ linkedin.com/in/prashlesh} ~ $|$ ~
+    \href{https://github.com/PrashleshPratapSingh}{\raisebox{-0.2\height}\faGithub\ github.com/PrashleshPratapSingh}
+\end{center}
+
+%-----------SUMMARY-----------
+\vspace{-12pt}
+\section{Summary}
+\small{Software Engineer specializing in building end-to-end LLM/agentic systems and AI products. Experienced in architecting multi-model pipelines, secure AI firewalls, and autonomous agents for startups and research-style applications.}
+\vspace{-5pt}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{AI/ML \& LLMs:}{ Gemini 2.5, Llama 3.3, Groq, LLM Orchestration, Agentic AI, Prompt Engineering, TensorFlow, PyTorch, Scikit-learn, Vector DBs (ChromaDB, Pinecone)} \\
+     \textbf{Languages:}{ Python, C++, TypeScript, JavaScript, Solidity, Java} \\
+     \textbf{Infrastructure \& Tools:}{ Streamlit, HuggingFace, Convex, Vercel, Git, GitHub, Linux, Docker (Basic)} \\
+     \textbf{Frontend/UX:}{ Next.js 15, React.js, Framer Motion, Google UX Design Certified} \\
+    }}
+ \end{itemize}
+ \vspace{-12pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Woxsen University}{2024 -- 2028}
+      {Bachelor of Computer Science - School of Technology}{CGPA: 7.8/10}
+  \resumeSubHeadingListEnd
+
+%-----------AI PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{Hybrid AI Firewall for LLMs (LLM Guardian V2)} $|$ \emph{Python, ChromaDB, Streamlit}}{2026}
+          \resumeItemListStart
+            \resumeItem{Engineered a 3-phase hybrid security engine using ChromaDB and Logistic Regression to detect jailbreaks and prompt injections with \textbf{84.5\% accuracy} (approximate validation on 500+ samples).}
+            \resumeItem{Architected a weighted risk scoring system that combines regex rules, semantic fingerprinting, and ML classification to block adversarial attacks in \textbf{<150ms}.}
+            \resumeItem{Built a modular preprocessor to normalize token smuggling and homoglyph attacks, ensuring robust protection for downstream LLM deployments.}
+          \resumeItemListEnd
+          \vspace{-8pt}
+    
+      \resumeProjectHeading
+          {\textbf{Empathic Voice AI Companion (EmpathAI)} $|$ \emph{Gemini 2.5, Multi-LLM, Convex, Clerk}}{2026}
+          \resumeItemListStart
+            \resumeItem{Developed a voice-first agentic AI system using a multi-model pipeline achieving \textbf{<500ms response latency} for natural, real-time therapeutic-grade empathy.}
+            \resumeItem{Integrated a secure data layer with Convex for persistent conversation memory and E2E encryption, supporting approximate usage of \textbf{50+ concurrent testers}.}
+            \resumeItem{Implemented real-time tone analysis and multi-agent coordination frameworks to detect mental health crises and provide adaptive therapeutic responses.}
+          \resumeItemListEnd
+          \vspace{-8pt}
+
+      \resumeProjectHeading
+          {\textbf{Autonomous Multi-Agent AI (Kaggle Agentic AI)}}{2026}
+          \resumeItemListStart
+            \resumeItem{Engineered autonomous AI agents with advanced reasoning capabilities using tool-selection frameworks and optimized prompt chaining for complex decision-making tasks.}
+            \resumeItem{Evaluated and refined multi-agent coordination strategies to improve reasoning efficiency and task completion rates in competitive agentic environments.}
+          \resumeItemListEnd
+          \vspace{-8pt}
+          
+      \resumeProjectHeading
+          {\textbf{Adaptive Learning AI Platform (Smart India Hackathon)}}{2025}
+          \resumeItemListStart
+            \resumeItem{Developed a personalized study assistant using a Spaced Repetition Algorithm and TensorFlow performance modeling to dynamically adjust learning difficulty for \textbf{300+ student testers}.}
+            \resumeItem{Optimized adaptive content delivery pipelines, resulting in improved student retention and engagement scores during the 36-hour national hackathon.}
+          \resumeItemListEnd
+          \vspace{-8pt}
+          
+    \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience & Leadership}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Freelance AI/Full-Stack Developer}{2024 -- Present}
+      {Self-Employed}{}
+      \resumeItemListStart
+        \resumeItem{Delivered production-ready AI products and e-commerce platforms for globally distributed clients, handling high-concurrency traffic and secure payment integrations.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Certified Peer Mentor}{2024 -- Present}
+      {Woxsen University}{}
+      \resumeItemListStart
+        \resumeItem{Mentored 100+ first-year students in Python, C++, and Data Structures, translating complex algorithmic concepts into actionable laboratory projects.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Google UX Design Certified} (2025) $|$ \textbf{Runner Up - Dataverse National Data Analysis Competition} \\
+     \textbf{Top 15 Finalist - Udhgam National Hackathon} $|$ \textbf{National Finalist - Woxsen Olympiad} \\
+     \textbf{Google Hackathon (2025)} - Developed innovative AI solutions using Vertex AI & Google Cloud Platform. \\
+    }}
+ \end{itemize}
+ \vspace{-12pt}
+
+\end{document}

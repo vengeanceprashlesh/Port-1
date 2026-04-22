@@ -1,5 +1,4 @@
-# PRASHLESH PRATAP SINGH
-iamprashlesh@gmail.com | (+91) 9918190536 | [github.com/PrashleshPratapSingh](https://github.com/PrashleshPratapSingh) | [linkedin.com/in/prashlesh](https://linkedin.com/in/prashlesh) | [Portfolio](https://prashlesh-portfolio.vercel.app)
+iamprashlesh@gmail.com | (+91) 9918190536 | [github.com/PrashleshPratapSingh](https://github.com/PrashleshPratapSingh) | [linkedin.com/in/prashlesh](https://linkedin.com/in/prashlesh) | [Portfolio](https://prashlesh.vercel.app)
 
 ---
 
@@ -7,6 +6,7 @@ iamprashlesh@gmail.com | (+91) 9918190536 | [github.com/PrashleshPratapSingh](ht
 
 ◆ **Languages:** C++, Python, JavaScript, TypeScript, Java  
 ◆ **Frontend:** React.js, Next.js 15, HTML5, CSS3, Tailwind CSS, Framer Motion  
+◆ **App Development:** React Native, Expo, Mobile UI/UX, Cross-Platform Development  
 ◆ **Backend:** Node.js, Express.js, MongoDB, Convex, PostgreSQL  
 ◆ **Blockchain:** Solidity, Ethereum (Sepolia), Wagmi, Smart Contracts  
 ◆ **AI/ML:** Gemini 2.5, Llama 3.3, Groq, OpenAI APIs  
@@ -20,7 +20,7 @@ iamprashlesh@gmail.com | (+91) 9918190536 | [github.com/PrashleshPratapSingh](ht
 &nbsp;&nbsp;&nbsp;&nbsp;School of Technology | CGPA: 7.8/10 | *2024 - 2028*
 
 ◆ **Intermediate (XII) | Sunbeam School Varuna**  
-&nbsp;&nbsp;&nbsp;&nbsp;GPA: 7.6/10 | *2022 - 2024*
+&nbsp;&nbsp;&nbsp;&nbsp;GPA: 7.6/10 | *2022 - 2023*
 
 ---
 
@@ -61,7 +61,7 @@ Ethereum-based dApp for Ayurvedic herb supply chain transparency. Deployed **15+
 
 ---
 
-## POSITION OF RESPONSIBILITY
+## HACKATHONS & COMPETITIONS
 
 ◆ **Smart India Hackathon 2025** | *National-Level Competition* | *(2025)*  
 
@@ -69,11 +69,11 @@ Built AI-powered study assistant in **36-hour hackathon** solving real-world edu
 
 **Tech Stack:** React, Python, TensorFlow, MongoDB
 
-◆ **Kaggle Agentic AI Hackathon** | *2026*  
+◆ **Kaggle Agentic AI Hackathon** | *2025*  
 
 Participated in Kaggle's Agentic AI competition, building autonomous AI agents with advanced reasoning capabilities.
 
-◆ **Google Hackathon** | *2026*  
+◆ **Google Hackathon** | *2025*  
 
 Competed in Google's hackathon focused on innovative technology solutions.
 
@@ -82,6 +82,7 @@ Competed in Google's hackathon focused on innovative technology solutions.
 ## ACHIEVEMENTS / CERTIFICATIONS
 
 ● **Google UX Design Certified** - Foundations of User Experience Design (2025)  
-● Deployed **5+ production applications** with 99.9% uptime on Vercel  
-● **17+ GitHub repositories** with active open-source contributions  
-● Specialized in Full-Stack Web Development with focus on scalable architecture
+● **Certified Peer Learner** - Woxsen University, recognized for teaching C, C++, and Python to first-year students  
+● **National Woxsen Olympiad** - Advanced to the Final Round of the national-level academic olympiad  
+● **Udhgam Hackathon** - Secured Top 15 finish among competing teams  
+● **Dataverse Competition** - Runner Up in data analysis competition, demonstrating strong analytical and data-driven problem-solving skills

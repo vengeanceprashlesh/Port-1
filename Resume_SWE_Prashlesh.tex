@@ -1,0 +1,173 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Prashlesh Pratap Singh
+% Role: Software Engineer
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-2pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{blue}\titlerule \vspace{-3pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Prashlesh Pratap Singh} \\ \vspace{1pt}
+    \small \textbf{Computer Science Student | Full-Stack Software Engineer} \\ \vspace{8pt}
+    \small 
+    \raisebox{-0.1\height}\faPhone\ +91-9918190536 ~ $|$ ~ 
+    \href{mailto:iamprashlesh@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ iamprashlesh@gmail.com} ~ $|$ ~ 
+    \href{https://linkedin.com/in/prashlesh}{\raisebox{-0.2\height}\faLinkedin\ linkedin.com/in/prashlesh} ~ $|$ ~
+    \href{https://github.com/PrashleshPratapSingh}{\raisebox{-0.2\height}\faGithub\ github.com/PrashleshPratapSingh}
+\end{center}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Frontend:}{ Next.js 15, React.js, React Native, Expo, TypeScript, Tailwind CSS, Framer Motion, GSAP, Shadcn UI} \\
+     \textbf{Backend \& Cloud:}{ Node.js, Express.js, Firebase, Supabase, Convex, PostgreSQL, MongoDB, Prisma, Clerk, Vercel} \\
+     \textbf{Languages:}{ TypeScript, JavaScript, Python, C++, Solidity, Java, SQL} \\
+     \textbf{Specialized:}{ Blockchain (Solidity, Smart Contracts, Wagmi), AI/ML Integration, REST APIs, Git, GitHub} \\
+    }}
+ \end{itemize}
+ \vspace{-12pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Woxsen University}{2024 -- 2028}
+      {Bachelor of Computer Science - School of Technology}{CGPA: 7.8/10}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Freelance Full-Stack Developer}{2024 -- Present}
+      {Self-Employed}{}
+      \resumeItemListStart
+        \resumeItem{Engineered production-ready platforms handling high-concurrency traffic using Next.js, PostgreSQL, and Clerk.}
+        \resumeItem{Successfully migrated legacy systems to Firebase/Supabase for improved scalability and real-time updates.}
+        \resumeItem{Optimized application performance reaching 99.9\% uptime on Vercel deployments with robust CI/CD practices.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------PROJECTS-----------
+\section{Software Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{LLM Guardian V2 - Hybrid AI Firewall} $|$ \emph{Python, ChromaDB, Streamlit}}{2026}
+          \resumeItemListStart
+            \resumeItem{Architected a modular hybrid security engine with decoupled preprocessor and multi-phase detection.}
+            \resumeItem{Developed a risk scoring system using TF-IDF + Logistic Regression (84.5\% accuracy) and ChromaDB fingerprints.}
+          \resumeItemListEnd
+          \vspace{-8pt}
+    
+      \resumeProjectHeading
+          {\textbf{Most Valuable - Raffle Platform} $|$ \emph{Next.js, TypeScript, Tailwind CSS, PostgreSQL}}{2024}
+          \resumeItemListStart
+            \resumeItem{Architected a high-performance platform with real-time participation tracking and anti-fraud mechanisms.}
+            \resumeItem{Optimized database queries and front-end rendering to handle traffic spikes during limited product drops.}
+          \resumeItemListEnd
+          \vspace{-8pt}
+          
+      \resumeProjectHeading
+          {\textbf{HerbX - Blockchain Supply Chain} $|$ \emph{Solidity, Next.js, Ethereum (Sepolia), Wagmi}}{2025}
+          \resumeItemListStart
+            \resumeItem{Developed a dApp for supply chain transparency with \textbf{15+ Solidity smart contracts} on Sepolia testnet.}
+            \resumeItem{Leveraged blockchain for authenticity proofs to reduce counterfeit risks in herb trading.}
+          \resumeItemListEnd 
+          \vspace{-8pt}
+          
+    \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements / Certifications}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Google UX Design Certified} - Foundations of Design (2025) $|$ \textbf{Udhgam Hackathon - Top 15} \\
+     \textbf{Smart India Hackathon 2025} - Built AI study assistant solving real-world education challenges. \\
+     \textbf{Certified Peer Learner} - Instructed 100+ students in DS & Algorithmic fundamentals in C++, Python. \\
+    }}
+ \end{itemize}
+ \vspace{-12pt}
+
+\end{document}

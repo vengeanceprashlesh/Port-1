@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased min-h-screen overflow-x-hidden">
+      <body className="antialiased min-h-screen overflow-x-clip">
         <CustomCursor />
         <SmoothScroll>
           {children}

@@ -39,22 +39,6 @@ export function PortfolioCarousel() {
                 }
             })
 
-            // Image Parallax within cards
-            const images = gsap.utils.toArray<HTMLElement>('.parallax-img');
-            images.forEach(img => {
-                gsap.to(img, {
-                    scale: 1.2,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: img.parentElement,
-                        containerAnimation: tween,
-                        start: "left right",
-                        end: "right left",
-                        scrub: 1
-                    }
-                })
-            });
-
         }, section)
 
         return () => ctx.revert()
@@ -100,7 +84,7 @@ export function PortfolioCarousel() {
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className={`parallax-img w-full h-full ${project.objectFit || 'object-cover'} ${project.imageAlignment || 'object-center'} ${project.objectFit ? 'scale-100' : 'scale-110'} grayscale hover:grayscale-0 transition-all duration-700 ease-out`}
+                                        className={`w-full h-full object-contain ${project.imageAlignment || 'object-center'} grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100`}
                                     />
                                 </Link>
                             </div>

@@ -15,13 +15,17 @@ export function CustomCursor() {
         if (!cursor || !follower) return
 
         // GSAP QuickTo for performance (no state updates)
-        const xToCursor = gsap.quickTo(cursor, "x", { duration: 0, ease: "power3" })
-        const yToCursor = gsap.quickTo(cursor, "y", { duration: 0, ease: "power3" })
+        const xToCursor = gsap.quickTo(cursor, "x", { duration: 0.05, ease: "power3" })
+        const yToCursor = gsap.quickTo(cursor, "y", { duration: 0.05, ease: "power3" })
 
         const xToFollower = gsap.quickTo(follower, "x", { duration: 0.8, ease: "power3" })
         const yToFollower = gsap.quickTo(follower, "y", { duration: 0.8, ease: "power3" })
 
         const onMouseMove = (e: MouseEvent) => {
+            if (cursor.classList.contains('opacity-0')) {
+                cursor.classList.remove('opacity-0')
+                follower.classList.remove('opacity-0')
+            }
             xToCursor(e.clientX)
             yToCursor(e.clientY)
             xToFollower(e.clientX)

@@ -6,7 +6,7 @@ import { ContactFooter } from '@/components/contact-footer'
 
 export default function Home() {
   return (
-    <main className="selection:bg-neutral-900 selection:text-white overflow-x-hidden text-neutral-900 bg-[#fcfbf9]">
+    <main className="selection:bg-neutral-900 selection:text-white overflow-x-clip text-neutral-900 bg-[#fcfbf9]">
       {/* Hero Section */}
       <EngineerHero />
 
