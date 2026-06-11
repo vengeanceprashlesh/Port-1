@@ -42,22 +42,26 @@ export function EngineerHero() {
                 {/* Left: Typography & Actions */}
                 <div className="flex flex-col justify-center order-2 lg:order-1 z-10">
                     <div className="mb-8">
-                        <h2 className="text-xs font-bold tracking-[0.2em] text-neutral-500 uppercase mb-6">
-                            Software Engineer & Architect
+                        <h2 className="text-xs md:text-sm font-bold tracking-[0.1em] text-neutral-500 uppercase mb-6 flex flex-wrap gap-x-2 gap-y-1">
+                            <span>CS Student @ Woxsen</span>
+                            <span className="text-neutral-300">•</span>
+                            <span>Software Engineer</span>
+                            <span className="text-neutral-300">•</span>
+                            <span>Open to Internships</span>
                         </h2>
 
-                        <div className="flex flex-col leading-[0.9]">
-                            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-black mb-2">
-                                Building
+                        <div className="flex flex-col mb-4">
+                            <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-black tracking-tighter text-black leading-[1.05] mb-4">
+                                Full-Stack Developer
                             </h1>
-                            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-neutral-300">
-                                Digital Logic.
-                            </h1>
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-neutral-400 max-w-2xl leading-snug">
+                                specializing in <span className="text-neutral-800">AI-powered</span> web applications.
+                            </h2>
                         </div>
                     </div>
 
                     <p className="text-base md:text-lg text-neutral-600 leading-relaxed max-w-lg mb-10 font-medium">
-                        I craft scalable, high-performance web applications with a focus on logical precision and clean implementation.
+                        I build production-grade apps with Next.js, Node.js, and LLM integrations — from idea to deployment.
                     </p>
 
                     <div className="flex flex-wrap gap-4 items-center">
@@ -67,7 +71,7 @@ export function EngineerHero() {
                             duration={800}
                             className="cursor-pointer bg-neutral-900 text-white px-8 py-4 rounded-full text-sm font-bold tracking-wide hover:bg-black transition-transform hover:-translate-y-1 duration-300 flex items-center gap-2"
                         >
-                            View Work <ArrowRight className="w-4 h-4" />
+                            View Projects <ArrowRight className="w-4 h-4" />
                         </ScrollLink>
 
                         <ScrollLink

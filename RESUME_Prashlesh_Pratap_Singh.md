@@ -1,16 +1,15 @@
+# Prashlesh Pratap Singh
 iamprashlesh@gmail.com | (+91) 9918190536 | [github.com/PrashleshPratapSingh](https://github.com/PrashleshPratapSingh) | [linkedin.com/in/prashlesh](https://linkedin.com/in/prashlesh) | [Portfolio](https://prashlesh.vercel.app)
 
 ---
 
 ## SKILLS
 
-◆ **Languages:** C++, Python, JavaScript, TypeScript, Java  
-◆ **Frontend:** React.js, Next.js 15, HTML5, CSS3, Tailwind CSS, Framer Motion  
-◆ **App Development:** React Native, Expo, Mobile UI/UX, Cross-Platform Development  
-◆ **Backend:** Node.js, Express.js, MongoDB, Convex, PostgreSQL  
-◆ **Blockchain:** Solidity, Ethereum (Sepolia), Wagmi, Smart Contracts  
-◆ **AI/ML:** Gemini 2.5, Llama 3.3, Groq, OpenAI APIs  
-◆ **Tools & Design:** Git, GitHub, Figma, Vercel, Clerk, UI/UX Design (Google Certified)
+◆ **Languages:** C++, Python, TypeScript, JavaScript, Java  
+◆ **Frontend:** Next.js 15, React.js, Tailwind CSS, Framer Motion  
+◆ **Backend & DB:** Node.js, Express.js, PostgreSQL, MongoDB, Convex  
+◆ **AI & Agentic Systems:** LangGraph, Gemini 2.5, Llama 3.3, Groq, OpenAI APIs  
+◆ **Tools & Architecture:** Git, Vercel, Clerk, System Design, REST APIs
 
 ---
 
@@ -28,7 +27,7 @@ iamprashlesh@gmail.com | (+91) 9918190536 | [github.com/PrashleshPratapSingh](ht
 
 ◆ **Freelance Full-Stack Developer** | *2024 - Present*  
 
-Built production-ready e-commerce and raffle platforms for clients, handling payment integrations, secure authentication, and high-traffic performance optimization using Next.js, React, and PostgreSQL.
+Architected and deployed production-grade e-commerce and raffle platforms using Next.js and PostgreSQL. Engineered secure entry systems capable of handling 5,000+ concurrent users during high-stakes product drops with zero downtime, integrating robust payment and authentication flows.
 
 ---
 
@@ -46,20 +45,11 @@ Voice-first AI mental health assistant with **<500ms response latency**, providi
 ### ◆ **Most Valuable - E-commerce Raffle Platform**
 🔗 [Live Demo](https://most-valuable.vercel.app/) | [GitHub](https://github.com/PrashleshPratapSingh/most-valuable)
 
-High-performance raffle platform with secure entry system, real-time participation tracking, and transparent winner selection. Optimized for high-concurrency traffic spikes during product drops. Integrated payment gateway and anti-fraud mechanisms.
+Engineered a high-performance raffle platform managing concurrent traffic spikes up to 5,000+ users during critical product drops. Implemented secure entry queues, real-time participation tracking, and transparent winner selection. Integrated robust payment gateways and anti-fraud mechanisms to ensure fairness.
 
 **Tech Stack:** Next.js, TypeScript, Tailwind CSS, PostgreSQL
 
----
 
-### ◆ **HerbX - Blockchain Supply Chain System** *(Work in Progress)*
-🔗 [Live Demo](https://herb-x.vercel.app/) | [GitHub](https://github.com/PrashleshPratapSingh/HerbX)
-
-Ethereum-based dApp for Ayurvedic herb supply chain transparency. Deployed **15+ Solidity smart contracts** on Sepolia testnet enabling immutable record-keeping and QR-based product verification. Reduces counterfeit risk through blockchain-backed authenticity proofs.
-
-**Tech Stack:** Solidity, Next.js, TypeScript, Ethereum (Sepolia), Wagmi
-
----
 
 ## HACKATHONS & COMPETITIONS
 
@@ -68,14 +58,6 @@ Ethereum-based dApp for Ayurvedic herb supply chain transparency. Deployed **15+
 Built AI-powered study assistant in **36-hour hackathon** solving real-world education challenges. Implemented personalized learning paths with spaced repetition algorithm and adaptive content delivery for 300+ student testers.
 
 **Tech Stack:** React, Python, TensorFlow, MongoDB
-
-◆ **Kaggle Agentic AI Hackathon** | *2025*  
-
-Participated in Kaggle's Agentic AI competition, building autonomous AI agents with advanced reasoning capabilities.
-
-◆ **Google Hackathon** | *2025*  
-
-Competed in Google's hackathon focused on innovative technology solutions.
 
 ---
 

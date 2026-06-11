@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const techStacks = [
-    'React', 'Next.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'TailwindCSS', 'Python', 'C++', 'Git', 'Figma'
+    'Next.js', 'TypeScript', 'Python', 'LangGraph', 'AI/ML Agents', 'Node.js', 'React', 'MongoDB', 'TailwindCSS', 'C++', 'Figma'
 ]
 
 export function BentoGrid() {
@@ -42,14 +42,24 @@ export function BentoGrid() {
     }, [])
 
     return (
-        <section ref={sectionRef} className="pb-16 pt-12 md:pb-24 md:pt-16 px-6 md:px-12 max-w-7xl mx-auto">
-            <div ref={cardsRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+        <section id="stack" ref={sectionRef} className="pb-16 pt-12 md:pb-24 md:pt-24 px-6 md:px-12 max-w-7xl mx-auto">
+            {/* Section Header */}
+            <div className="mb-12 md:mb-16">
+                <span className="text-xs font-semibold tracking-widest text-neutral-400 uppercase block mb-4">
+                    Core Competencies
+                </span>
+                <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900 leading-[1.15]">
+                    Technical Expertise.
+                </h3>
+            </div>
+
+            <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5">
                 {/* GitHub Card - Featured */}
                 <a
                     href="https://github.com/PrashleshPratapSingh"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group col-span-1 row-span-2 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 rounded-3xl p-6 md:p-7 flex flex-col justify-between min-h-[280px] github-glow relative overflow-hidden"
+                    className="group col-span-1 md:col-span-1 md:row-span-2 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 rounded-3xl p-6 md:p-7 flex flex-col justify-between min-h-[280px] github-glow relative overflow-hidden"
                 >
                     {/* Animated gradient border on hover */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -146,10 +156,10 @@ export function BentoGrid() {
                     </div>
                     <div className="flex flex-wrap gap-1.5 mt-auto">
                         <span className="px-2.5 py-1 bg-white/80 border border-violet-100 rounded-lg text-xs font-medium text-violet-700">
-                            System Design
+                            Agent-based Systems
                         </span>
                         <span className="px-2.5 py-1 bg-white/80 border border-violet-100 rounded-lg text-xs font-medium text-violet-700">
-                            DSA
+                            System Design
                         </span>
                     </div>
                 </div>

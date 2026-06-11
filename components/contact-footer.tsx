@@ -16,8 +16,8 @@ export function ContactFooter() {
         }
     }
 
-    const handleWhatsApp = () => {
-        window.open('https://wa.me/919918190536', '_blank')
+    const handleEmailDirect = () => {
+        window.location.href = 'mailto:iamprashlesh@gmail.com'
     }
 
     return (
@@ -36,7 +36,7 @@ export function ContactFooter() {
                             <br />
                             something
                             <br />
-                            <span className="text-neutral-500">iconic.</span>
+                            <span className="text-neutral-500">intelligent.</span>
                         </h4>
                         <div className="flex flex-col md:flex-row gap-8 md:gap-16 mt-12">
                             <div>
@@ -66,16 +66,13 @@ export function ContactFooter() {
                                     <a href="https://github.com/PrashleshPratapSingh" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-400 transition-colors">
                                         GitHub
                                     </a>
-                                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-neutral-400 transition-colors">
-                                        Instagram
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <button
-                        onClick={handleWhatsApp}
+                        onClick={handleEmailDirect}
                         className="group relative w-32 h-32 md:w-40 md:h-40 rounded-full border border-neutral-700 flex items-center justify-center hover:bg-[#fcfbf9] hover:text-neutral-950 transition-all duration-500 cursor-pointer"
                     >
                         <span className="text-sm font-medium uppercase tracking-widest group-hover:scale-110 transition-transform">

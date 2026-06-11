@@ -58,19 +58,16 @@ export function ProfileSection() {
                         About Me
                     </span>
                     <h3 className="text-3xl md:text-4xl font-semibold tracking-tight mt-6 leading-[1.15] text-neutral-900">
-                        Turning ideas into polished, user-focused web experiences.
+                        Engineering resilient platforms and intelligent agent-based systems.
                     </h3>
                 </div>
                 <div ref={contentRef} className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-10 md:text-lg leading-relaxed text-base text-neutral-600 w-full">
                     <p>
-                        I'm a <span className="text-neutral-900 font-medium">Software Engineer & Freelancer</span> passionate about
-                        exploring every domain of technology. I don't limit myself to one stack; I build
-                        <span className="text-neutral-900 font-medium"> complete, scalable solutions</span> using whatever tools are best for the job.
+                        I'm a <span className="text-neutral-900 font-medium">3rd year CS student at Woxsen</span>. I've shipped <span className="text-neutral-900 font-medium">production apps for real clients</span> — a raffle platform handling concurrent traffic spikes, and an AI mental health tool with voice and crisis detection.
                     </p>
                     <div className="flex flex-col gap-6">
                         <p>
-                            Currently pursuing opportunities to learn, grow, and contribute to
-                            meaningful projects that make a difference.
+                            I'm going deep on <span className="text-neutral-900 font-medium">AI/ML and LangGraph</span> right now, building toward agent-based systems. Looking for an internship where I can do <span className="text-neutral-900 font-medium">real work, not just shadow</span>.
                         </p>
                         <div className="flex items-center gap-2 text-sm font-medium text-emerald-600">
                             <span className="relative flex h-2.5 w-2.5">

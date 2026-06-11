@@ -1,134 +1,100 @@
 'use client'
 
-import { useRef, useLayoutEffect, useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
-
 import { projects } from '@/lib/data'
 
 export function PortfolioCarousel() {
-    const sectionRef = useRef<HTMLElement>(null)
-    const trackRef = useRef<HTMLDivElement>(null)
-    const [scrollProgress, setScrollProgress] = useState(0)
-
-    useLayoutEffect(() => {
-        const section = sectionRef.current
-        const track = trackRef.current
-
-        if (!section || !track) return
-
-        const ctx = gsap.context(() => {
-            const getScrollAmount = () => -(track.scrollWidth - window.innerWidth)
-
-            const tween = gsap.to(track, {
-                x: getScrollAmount,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top top',
-                    end: () => `+=${Math.abs(getScrollAmount())}`,
-                    pin: true,
-                    scrub: 1,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1,
-                    onUpdate: (self) => setScrollProgress(Math.round(self.progress * 100))
-                }
-            })
-
-        }, section)
-
-        return () => ctx.revert()
-    }, [])
-
     return (
-        <section ref={sectionRef} className="bg-[#fcfbf9] relative overflow-hidden h-screen" id="portfolio">
+        <section className="bg-[#fcfbf9] relative w-full pt-32 pb-48" id="portfolio">
 
             {/* Header / Intro */}
-            <div className="absolute top-0 left-0 w-full p-8 md:p-12 z-20 pointer-events-none flex justify-between items-start">
-                <div>
-                    <h3 className="text-3xl md:text-5xl font-bold text-neutral-900 leading-tight">
-                        Projects.
-                    </h3>
-                </div>
+            <div className="w-full max-w-7xl mx-auto px-6 md:px-12 mb-16 md:mb-24">
+                <span className="text-xs font-semibold tracking-widest text-neutral-400 uppercase block mb-4">
+                    Selected Work
+                </span>
+                <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-neutral-900 leading-[1.15] max-w-2xl">
+                    Production-grade platforms and intelligent systems built for scale.
+                </h3>
             </div>
 
-            {/* Carousel Track */}
-            <div ref={trackRef} className="flex h-full items-center pl-[5vw] pr-[8vw] gap-[5vw] md:pl-[20vw] md:pr-[15vw] md:gap-[10vw]">
+            {/* Vertical Sticky Stack */}
+            <div className="w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col gap-24 md:gap-32 relative">
+                {projects.map((project, index) => {
+                    // Calculate top sticky offset so they cascade down nicely
+                    const stickyTop = `calc(15vh + ${index * 40}px)`
 
-                {projects.map((project, index) => (
-                    <div
-                        key={project.id}
-                        className="w-[80vw] md:w-[60vw] h-[60vh] md:h-[70vh] flex-shrink-0 relative group flex items-center"
-                    >
-                        {/* Giant Number (Outline) */}
-                        <div className="absolute -left-20 top-0 text-[12vw] font-bold text-transparent text-stroke clamp-text pointer-events-none z-10 leading-none select-none transition-all duration-700 opacity-20">
-                            0{index + 1}
-                        </div>
-
-                        {/* Card Container */}
-                        <div className="w-full h-full relative flex flex-col md:flex-row bg-white overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-[1.02] z-10">
-
-                            {/* Image Half */}
-                            <div className="w-full md:w-3/5 h-full overflow-hidden relative">
-                                <Link
-                                    href={project.demo || project.github || '#'}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full h-full"
-                                >
-                                    <div className="absolute inset-0 bg-neutral-900/10 z-10 hover:bg-transparent transition-all duration-500" />
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className={`w-full h-full object-contain ${project.imageAlignment || 'object-center'} grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100`}
-                                    />
-                                </Link>
+                    return (
+                        <div
+                            key={project.id}
+                            className="w-full h-auto md:h-[70vh] flex-shrink-0 relative group flex items-center shadow-2xl shadow-neutral-900/10 rounded-[2rem] overflow-hidden bg-white border border-neutral-100"
+                            style={{
+                                position: 'sticky',
+                                top: stickyTop,
+                            }}
+                        >
+                            {/* Giant Number (Outline) */}
+                            <div className="absolute right-8 top-8 text-[8vw] md:text-[6vw] font-bold text-transparent text-stroke clamp-text pointer-events-none z-10 leading-none select-none opacity-20">
+                                0{index + 1}
                             </div>
 
-                            {/* Info Half */}
-                            <div className="w-full md:w-2/5 h-full p-8 md:p-12 flex flex-col justify-between bg-white relative z-20">
-                                <div>
-                                    <div className="flex flex-wrap gap-2 mb-6">
-                                        {project.techStack.map(tech => (
-                                            <span key={tech} className="text-[10px] font-mono uppercase border border-neutral-200 px-2 py-1 rounded-sm text-neutral-500">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <h3 className="text-4xl md:text-5xl font-bold text-neutral-900 leading-[0.9] tracking-tight mb-4 whitespace-pre-line">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-sm md:text-base text-neutral-500 leading-relaxed max-w-xs">
-                                        {project.description}
-                                    </p>
-                                </div>
+                            {/* Card Container */}
+                            <div className="w-full h-full relative flex flex-col md:flex-row">
 
-                                <div className="flex items-center justify-between border-t border-neutral-100 pt-6 mt-6">
+                                {/* Image Half */}
+                                <div className="w-full h-[40vh] md:w-3/5 md:h-full overflow-hidden relative border-b md:border-b-0 md:border-r border-neutral-100">
                                     <Link
                                         href={project.demo || project.github || '#'}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group/link flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-neutral-900"
+                                        className="block w-full h-full bg-[#f8f7f5]"
                                     >
-                                        Open project
-                                        <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                                        <div className="absolute inset-0 bg-neutral-900/5 z-10 hover:bg-transparent transition-all duration-500" />
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className={`w-full h-full object-contain p-8 md:p-12 ${project.imageAlignment || 'object-center'} grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105`}
+                                        />
                                     </Link>
-                                    <span className="text-xs font-mono text-neutral-300">{project.year}</span>
                                 </div>
+
+                                {/* Info Half */}
+                                <div className="w-full md:w-2/5 h-full p-8 md:p-12 flex flex-col justify-between relative z-20 bg-white">
+                                    <div>
+                                        <div className="flex flex-wrap gap-2 mb-8">
+                                            {project.techStack.map(tech => (
+                                                <span key={tech} className="text-[10px] font-mono uppercase border border-neutral-200 px-2.5 py-1 rounded-sm text-neutral-500 bg-neutral-50">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <h3 className="text-3xl md:text-5xl font-bold text-neutral-900 leading-[1.1] tracking-tight mb-6 whitespace-pre-line">
+                                            {project.title}
+                                        </h3>
+                                        <p className="text-base md:text-lg text-neutral-500 leading-relaxed max-w-sm">
+                                            {project.description}
+                                        </p>
+                                    </div>
+
+                                    <div className="flex items-center justify-between border-t border-neutral-100 pt-6 mt-12 md:mt-0">
+                                        <Link
+                                            href={project.demo || project.github || '#'}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="group/link flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-neutral-900"
+                                        >
+                                            Open project
+                                            <ArrowUpRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1" />
+                                        </Link>
+                                        <span className="text-xs font-mono text-neutral-400">{project.year}</span>
+                                    </div>
+                                </div>
+
                             </div>
-
                         </div>
-                    </div>
-                ))}
-
-                {/* End spacer - creates gap before footer */}
-                <div className="w-[20vw] md:w-[25vw] flex-shrink-0" aria-hidden="true" />
+                    )
+                })}
             </div>
-
         </section>
     )
 }
